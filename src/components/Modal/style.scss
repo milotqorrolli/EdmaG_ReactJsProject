@@ -1,0 +1,83 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+
+
+    .content-modal {
+        // border: 0.5px solid black;
+        background-color: white;
+        position: relative;
+        max-width: 80%;
+        min-width: 40%;
+        max-height: 90vh;
+        padding: 30px 0;
+        border-radius: 4px;
+        overflow-y: auto;
+        margin: 0 auto;
+
+
+
+        .modal-wrapper {
+            padding-top: 30px;
+            padding-bottom: 70px;
+            
+            max-width: 80%;
+            margin: 0 auto;
+
+            img {
+                height: 200px;
+                width: auto;
+                align-self: center;
+                object-fit: cover;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 15px;
+                border: 1px solid rgb(219, 30, 50);
+                border-radius: 4px;
+                transition: all 0.4s ease-in-out 0s;
+                background-color: rgb(219, 30, 50);
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                font-weight: 300;
+                text-transform: uppercase;
+
+                &:hover {
+                    border: 1.5px solid #db1e32;
+                    background-color: white;
+                    color: #db1e32;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .company-info {
+        ul {
+            list-style: square;
+            li {
+                color: rgb(137, 137, 137);
+            }
+        }
+    }
+}

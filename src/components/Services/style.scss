@@ -1,0 +1,46 @@
+.services-container {
+    width: 100%;
+    margin: 0 auto;
+
+    .services-wrapper {
+        max-width: 1300px;
+        padding-top: 70px;
+        margin: 0 auto;
+
+        h1 {
+            color: #db1e32;
+            text-transform: uppercase;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next row */
+            justify-content: space-between;
+
+            .service {
+                width: calc(25% - 16px); /* Set each service to be 50% wide with spacing */
+                margin-bottom: 32px; /* Add vertical spacing between services */
+                padding-left: 16px;
+                text-align: center;
+
+                p {
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    filter: grayscale(100%);
+                    transition: all 0.3s ease-in-out 0s;
+                    transform: translateY(0);
+
+                    &:hover {
+                        filter: grayscale(0%);
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+    }
+}
