@@ -86,30 +86,105 @@
 
             .icons {
                 display: flex;
-                
-                a {
-                    margin-top: 16px;
-                    padding-left: 8px;
-                    border-radius: 50%;
 
-                    // &:hover {
-                    //     background-color: aqua;
-                    // }
+                .icon {
+                    display: flex;
 
-                    svg {
-                        height: 25px;
-                        width: 25px;
-                        fill: rgb(137, 137, 137);
-                        transition: 0.2s ease-in-out 0s;
+                    a {
+                        margin-top: 16px;
+                        padding-left: 8px;
+                        border-radius: 50%;
 
-                        &:hover {
-                            fill: #db1e32;
+                        // &:hover {
+                        //     background-color: aqua;
+                        // }
+
+                        svg {
+                            height: 25px;
+                            width: 25px;
+                            fill: rgb(137, 137, 137);
+                            transition: 0.2s ease-in-out 0s;
+
+                            &:hover {
+                                fill: #db1e32;
+                            }
+
+
                         }
-
-                        
                     }
                 }
             }
         }
     }
 }
+
+@media (max-width: 860px) {
+    .footer-container {
+        padding-top: 10px;
+        /* Reduce top padding for smaller screens */
+        border-top: 1px solid rgb(251, 155, 164);
+        /* Reduce border thickness */
+        border-bottom: 1px solid rgb(251, 155, 164);
+        /* Reduce border thickness */
+
+        .footer-wrapper {
+            flex-direction: column;
+            /* Adjust layout to stack elements vertically */
+
+            .image-wrapper {
+                width: 100%;
+                /* Make image full width */
+                padding-right: 0;
+                text-align: center;
+                /* Center the image */
+                margin-bottom: 20px;
+                /* Add some spacing */
+            }
+
+            .link-wrapper {
+                width: 100%;
+                /* Make links full width */
+                padding: 0;
+                /* Remove horizontal padding */
+            }
+
+
+        }
+
+        .copyright-container {
+            .copyright-wrapper {
+                border-top: 1px solid rgb(251, 155, 164);
+                /* Reduce border thickness */
+                display: flex;
+                flex-direction: column;
+
+                .copy1 {
+                    display: flex;
+                    max-width: fit-content;
+                }
+
+                .icons {
+                    display: flex;
+                    align-items: center; /* Center icons vertically */
+                    justify-content: center; /* Center icons horizontally */
+                    
+                    a {
+                        margin-top: 8px; /* Adjust top margin for spacing */
+                        padding: 8px; /* Increase padding for better touch interaction */
+                        border-radius: 50%;
+                        
+                        svg {
+                            height: 20px; /* Reduce the height of icons */
+                            width: 20px; /* Reduce the width of icons */
+                            transition: 0.2s ease-in-out 0s;
+                
+                            &:hover {
+                                fill: #db1e32; /* Change color on hover */
+                            }
+                        }
+                    }
+                }
+            
+            }
+        }
+    }}

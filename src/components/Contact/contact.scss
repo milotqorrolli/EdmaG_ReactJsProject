@@ -1,5 +1,90 @@
-.ccc {
+.contact-container {
+    width: 100%;
+    margin: 0 auto;
     padding-top: 70px;
+    background-color: #eee;
+    padding-bottom: 35px;
 
-    
+    .contact-wrapper {
+        max-width: 1300px;
+        margin: 0 auto;
+
+        h1 {
+            color: #db1e32;
+            text-transform: uppercase;
+        }
+
+        .parahero {
+            
+                font-style: italic;
+                font-size: xx-large;
+                text-align: center;
+            
+        }
+
+        .form-container {
+            max-width: 70%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+
+
+            .form1 {
+                width: 50%;
+                align-items: center;
+                display: flex;
+                align-items: start;
+
+                ul {
+                    font-size: large;
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        strong {
+                            color: black;
+                        }
+
+                        padding: 5px 0;
+                        color: rgb(137, 137, 137);
+                    }
+                }
+
+            }
+
+            .form2 {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+
+                .btn {
+                    align-self: center;
+
+                    button {
+                        font-size: 14px;
+                        padding: 12px 32px;
+                        border: 1px solid rgb(219, 30, 50);
+                        border-radius: 4px;
+                        transition: all 0.4s ease-in-out 0s;
+                        background-color: rgb(219, 30, 50);
+                        color: rgb(255, 255, 255);
+                        cursor: pointer;
+                        font-weight: 300;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            border: 1.5px solid #db1e32;
+                            background-color: white;
+                            color: #db1e32;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 }

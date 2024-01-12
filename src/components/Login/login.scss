@@ -2,7 +2,7 @@
   width: 100%;
   margin: 0 auto;
   display: flex;
-
+  flex-wrap: wrap; /* Allow flex items to wrap to the next line */
 
   .wrapper1 {
     max-width: 40%;
@@ -14,22 +14,18 @@
     color: #eee;
     text-align: center;
     
-
     h1 {
       font-size: 50px;
-
     }
 
     p {
       color: #eee;
       font-style: italic;
-
-
+      
       span {
-        font-style: italic
+        font-style: italic;
       }
     }
-
   }
 
   .wrapper2 {
@@ -52,13 +48,9 @@
       }
     }
 
-
-
     h1 {
       color: #db1e32;
-      // text-transform: uppercase;
       font-size: 60px;
-
     }
 
     .registerContainer {
@@ -88,8 +80,8 @@
       }
 
       .inputBox {
+        width: 100%; /* Full width for smaller screens */
         height: 48px;
-        width: 400px;
         font-size: large;
         border-radius: 8px;
         border: 1px solid grey;
@@ -117,5 +109,27 @@
       }
     }
   }
+}
 
+/* Media query for screens with a maximum width of 730px */
+@media (max-width: 730px) {
+  .login-container {
+    display: flex;
+    flex-direction: column;
+  
+  
+  .wrapper1 {
+    max-width: 100%;
+    height: max-content;
+    
+    h1 {
+      max-width: 100%;
+    }
+
+  }
+  
+  .wrapper2 {
+    max-width: 100%; 
+  }
+}
 }

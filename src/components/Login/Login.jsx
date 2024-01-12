@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.scss";
 import { NavLink } from "react-router-dom";
+// import logo from '../../assets/logo/logo-navbar.png'
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -14,8 +15,31 @@ const Login = (props) => {
   const [nameError, setNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
   const [loginError, setLoginError] = useState("");
-
   const navigate = useNavigate();
+  const [emailLogin, setEmailLogin] = useState("");
+  const [passwordLogin, setPasswordLogin] = useState("")
+
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const validateLogin = () => {
+    let isValidc = true;
+    if (!email) {
+      setEmailError("Email is required");
+      isValidc = false;
+    } else {
+      setEmailError("");
+    }
+
+    if (!password) {
+      setPasswordError("Password is required");
+      isValidc = false;
+    } else {
+      setPasswordError("");
+    }
+
+    return isValidc
+  }
 
   const validateFields = () => {
     let isValid = true;
@@ -51,30 +75,8 @@ const Login = (props) => {
     return isValid;
   };
 
-  const onButtonClick = () => {
-    if (validateFields()) {
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-      const user = users.find((u) => u.email === email && u.password === password);
-  
-      if (user) {
-        navigate("/home");
-      } else {
-        setLoginError("Invalid email or password. Please try again.");
-      }
-    } else {
-        setLoginError("Invalid email or password. Please try again.");
-
-    }
-  };
-  
-
-  const toggleWrapper = () => {
-    setShowWrapper2(!showWrapper2);
-  };
-
   const onRegisterClick = () => {
     if (validateFields()) {
-      const users = JSON.parse(localStorage.getItem("users")) || [];
       const user = {
         name: name,
         lastName: lastName,
@@ -85,12 +87,43 @@ const Login = (props) => {
 
       localStorage.setItem("users", JSON.stringify(users));
       toggleWrapper();
+      console.log(user);
     }
   };
 
+ const onButtonClick = () => {
+  const loginuser = {
+    email: email,
+    password: password,
+  };
+
+
+  if (validateLogin()) {
+    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const user = storedUsers.find((u) => u.email === loginuser.email && u.password === loginuser.password);
+    console.log(user);
+    if (user) {
+      console.log(user);
+      navigate("/home");
+    } else {
+      setLoginError("Invalid email or password. Please try again.");
+    }
+  }
+};
+
+
+  
+
+  const toggleWrapper = () => {
+    setShowWrapper2(!showWrapper2);
+  };
+
+
+  
   return (
     <div className="login-container">
       <div className="wrapper1">
+        {/* <img src={logo} alt="logo" /> */}
         <h1>Welcome to EDMA Gmbh</h1>
         <p>
           Please <span>login</span> to continue to our website
@@ -121,7 +154,7 @@ const Login = (props) => {
           </div>
           <div className="registerContainer">
             <p>
-              Don't you have an account? Register{" "}
+              Don't have an account? Register{" "}
               <NavLink onClick={toggleWrapper}>here</NavLink>
             </p>
           </div>
@@ -129,7 +162,7 @@ const Login = (props) => {
             <input
               className="inputButton"
               type="button"
-              onClick={onButtonClick}
+              onClick={() => onButtonClick()}
               value="Log in"
             />
           </div>

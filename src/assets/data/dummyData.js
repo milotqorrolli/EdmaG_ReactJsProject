@@ -199,6 +199,39 @@ const data = {
       ],
     },
   ],
+  navbar: [
+    {
+      id: 1,
+      name: "Home",
+      path: '/home'
+    },
+    {
+      id: 2,
+      name: "About Us",
+      path: '/aboutus'
+    },
+    {
+      id: 3,
+      name: "Architecture",
+      path: '/architecture'
+    },
+    {
+      id: 4,
+      name: "Services",
+      path: '/services'
+    },
+    {
+      id: 5,
+      name: "Projects",
+      path: '/projects'
+    },
+    {
+      id: 6,
+      name: "Contact",
+      path: '/contact'
+    },
+    // Add more items here
+  ]
 };
 
 export { data };

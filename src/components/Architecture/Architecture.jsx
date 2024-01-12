@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Architecture = () => {
   return (
-    <div className="arch-container">
+    <div className="arch-container" id="architecture">
       <div className="arch-wrapper">
         {data.architecture.map((el) => (
           <div key={el.id} className="arch">
